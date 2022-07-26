@@ -19,7 +19,7 @@
             $imagen = $_POST["imagen"];
             $vid = $_POST["video"];
 
-            $queryUpdate = "UPDATE guias SET titulo = $titulo, contenido = $contenido, imagen = $imagen, video = $vid WHERE guia_id = '$num';";
+            $queryUpdate = "UPDATE $tablaG SET titulo='$titulo', contenido='$contenido', imagen='$imagen', video='$vid' WHERE guia_id=$num";
 
             $resultquery = mysqli_query($link, $queryUpdate);
 

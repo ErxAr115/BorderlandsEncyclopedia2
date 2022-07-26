@@ -39,7 +39,7 @@
             echo "<h4 class='titulo'>$titulo</h4>";
             echo "<p class='contenido'>$contenido</p>";
             echo "<a href=$video>Video</a>&nbsp;&nbsp;";
-            echo "<a href=editar_guia_form.php?id=$id class='enlace'>Editar noticia</a>&nbsp;&nbsp;<a href=eliminar_guia.php?id=$id class='enlace'>Eliminar noticia</a></p>";
+            echo "<a href=editar_guia_form.php?id=$id class='enlace'>Editar guia</a>&nbsp;&nbsp;<a href=eliminar_guia.php?id=$id class='enlace'>Eliminar guia</a></p>";
             echo "</div>";
         }
     ?>

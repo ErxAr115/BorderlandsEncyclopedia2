@@ -30,7 +30,7 @@
         <label for="imagen">Enlace de imagen</label>
         <input type="text" name="imagen" value="<?php echo $row['imagen'];?>">
         <label for="video">Enlace de video</label>
-        <input type="text" name="video" value="<?php echo $row['imagen'];?>">
+        <input type="text" name="video" value="<?php echo $row['video'];?>">
         <input type="submit" value="Editar" class="boton">
     </form>
 

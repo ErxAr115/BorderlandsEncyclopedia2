@@ -37,7 +37,7 @@
         echo "<h1 class='titulo'>$row[titulo]</h1>";
         echo "<p class='contenido'>$row[contenido]</p>";
         echo "<img src=$row[imagen] class='imagen'>";
-        echo "<div class='enlace'><a href=$row[video]>Video</a></div>";
+        echo "<div class='enlace'><a href=$row[video]>Guía</a></div>";
     ?>
 
 <section class="footer">

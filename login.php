@@ -17,11 +17,6 @@
     $resultado = mysqli_query($conexion, $consulta);
     $filas = mysqli_num_rows($resultado);
 
-    // if (!$atrubutos['success']){
-    //     echo "<script type='text/javascript'>alert('Verificar Captcha');</script>";
-    // }
-    //header("location:administracion.html");
-
     if ($filas) {
         if (!$atributos['success']){
             echo "<script type='text/javascript'>alert('Verificar Captcha');</script>";

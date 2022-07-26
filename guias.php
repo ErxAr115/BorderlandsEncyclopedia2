@@ -21,7 +21,7 @@
                 <li><a href="index.html" class="nav-link">Inicio</a></li>
                 <li><a href="historia.html" class="nav-link">Historia</a></li>
                 <li><a href="noticias.php" class="nav-link">Noticias</a></li>
-                <li><a href="#" class="nav-link">Guías</a></li>
+                <li><a href="guias.php" class="nav-link">Guías</a></li>
                 <li><a href="login_form.php" class="nav-link">Login</a></li>
             </ul>
         </nav>
@@ -58,7 +58,7 @@
             <li><a href="index.html">Inicio</a></li>
             <li><a href="historia.html">Historia</a></li>
             <li><a href="noticias.php">Noticias</a></li>
-            <li><a href="#">Guías</a></li>
+            <li><a href="guias.php">Guías</a></li>
             <li><a href="login_form.php">Login</a></li>
         </ul>
         <p class="copyright">

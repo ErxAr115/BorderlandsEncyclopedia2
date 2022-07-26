@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/header-footer.css">
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/noti.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <link rel="icon" href="img/Logo_B.png">
     <title>Borderlands Encyclopedia</title>
@@ -21,24 +21,26 @@
                 <li><a href="index.html" class="nav-link">Inicio</a></li>
                 <li><a href="historia.html" class="nav-link">Historia</a></li>
                 <li><a href="noticias.php" class="nav-link">Noticias</a></li>
-                <li><a href="guias.php" class="nav-link">Guías</a></li>
+                <li><a href="#" class="nav-link">Guías</a></li>
                 <li><a href="login_form.php" class="nav-link">Login</a></li>
             </ul>
         </nav>
     </div>
 
-    <div class="description">
-        <img src="img/psycho.gif">
-        <div class="text">
-            <h1>¿Qué es Borderlands Encyclopedia?</h1>
-            <p>
-                Borderlands Encyclopedia es un proyecto enfocado en recopilar guías, consejos y noticias para ayudar a los nuevos jugadores a mejorar y hacer más amena su experiencia en el juego. <br>
-                Proyecto creado por: Jesús Ernesto Armenta Soto.
-            </p>
-        </div>
-    </div>
+    <?php
+        include("conexion.php");
+        $link = Conectar();
+        $num = $_GET["id"];
+        $registros = mysqli_query($link, "SELECT * FROM guias where guia_id = $num");
+        $row = mysqli_fetch_assoc($registros);
 
-    <section class="footer">
+        echo "<h1 class='titulo'>$row[titulo]</h1>";
+        echo "<p class='contenido'>$row[contenido]</p>";
+        echo "<img src=$row[imagen] class='imagen'>";
+        echo "<div class='enlace'><a href=$row[video]>Video</a></div>";
+    ?>
+
+<section class="footer">
         <div class="social">
             <a href="#"><i class="fab fa-instagram"></i></a>
             <a href="#"><i class="fab fa-snapchat"></i></a>
@@ -50,7 +52,7 @@
             <li><a href="index.html">Inicio</a></li>
             <li><a href="historia.html">Historia</a></li>
             <li><a href="noticias.php">Noticias</a></li>
-            <li><a href="guias.php">Guías</a></li>
+            <li><a href="#">Guías</a></li>
             <li><a href="login_form.php">Login</a></li>
         </ul>
         <p class="copyright">

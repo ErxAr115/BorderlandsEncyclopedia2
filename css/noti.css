@@ -33,3 +33,12 @@ h3 {
     width: 500px;
     height: auto;
 }
+
+.enlace {
+    text-align: center;
+    margin: auto;
+    width: 200px;
+    background-color: #4c3575;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}

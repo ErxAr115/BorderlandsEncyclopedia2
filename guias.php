@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/header-footer.css">
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <link rel="icon" href="img/Logo_B.png">
+    <link rel="stylesheet" href="css/header-footer.css">
+    <link rel="stylesheet" href="css/noticias.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <title>Borderlands Encyclopedia</title>
 </head>
 <body>
-    <div class="header">
+<div class="header">
         <div class="cont-logo">
             <img src="img/Logo_B.png" class="logo">
             <p>Borderlands Encyclopedia</p>
@@ -21,21 +21,29 @@
                 <li><a href="index.html" class="nav-link">Inicio</a></li>
                 <li><a href="historia.html" class="nav-link">Historia</a></li>
                 <li><a href="noticias.php" class="nav-link">Noticias</a></li>
-                <li><a href="guias.php" class="nav-link">Guías</a></li>
+                <li><a href="#" class="nav-link">Guías</a></li>
                 <li><a href="login_form.php" class="nav-link">Login</a></li>
             </ul>
         </nav>
     </div>
 
-    <div class="description">
-        <img src="img/psycho.gif">
-        <div class="text">
-            <h1>¿Qué es Borderlands Encyclopedia?</h1>
-            <p>
-                Borderlands Encyclopedia es un proyecto enfocado en recopilar guías, consejos y noticias para ayudar a los nuevos jugadores a mejorar y hacer más amena su experiencia en el juego. <br>
-                Proyecto creado por: Jesús Ernesto Armenta Soto.
-            </p>
-        </div>
+    <?php
+        include("conexion.php");
+        $link = Conectar();
+        $registros = mysqli_query($link, "SELECT * FROM guias");
+    ?>
+
+    <div class="contenedor">
+    <?php
+
+        while (list($id, $titulo, $contenido, $imagen, $video) = mysqli_fetch_array($registros)) {
+            echo "<div class='card'>";
+            echo "<img src=$imagen>";
+            echo "<h4>$titulo</h4>";
+            echo "<a href=guia_view.php?id=$id>Leer más</a>";
+            echo "</div>";
+        }
+    ?>
     </div>
 
     <section class="footer">
@@ -50,7 +58,7 @@
             <li><a href="index.html">Inicio</a></li>
             <li><a href="historia.html">Historia</a></li>
             <li><a href="noticias.php">Noticias</a></li>
-            <li><a href="guias.php">Guías</a></li>
+            <li><a href="#">Guías</a></li>
             <li><a href="login_form.php">Login</a></li>
         </ul>
         <p class="copyright">

@@ -22,10 +22,14 @@
                 <i class="fas fa-lock"></i>
                 <input type="password" name="pass" placeholder="Contraseña" required>
             </div>
+            <div class="captcha">
+                <div class="g-recaptcha" data-sitekey="6Ld5ASIhAAAAAMyaJaUqwG29biD4mkGE9_FfB8-m"></div>
+            </div>
             <div class="row button">
                 <input type="submit" value="Ingresar" class="boton">
             </div>
         </form>
     </div>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </body>
 </html>

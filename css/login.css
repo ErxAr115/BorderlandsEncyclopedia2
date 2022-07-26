@@ -20,6 +20,7 @@ h1 {
 
 .contenedor {
     width: 380px;
+    height: auto;
     background-color: #fff;
     border-radius: 10px;
 }
